@@ -1,0 +1,32 @@
+.ViewBox
+{
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+
+    transform-style: preserve-3d;
+    perspective: 300px;
+    .Stage
+    {
+        width: 100%;
+        height: 100%;
+
+        transform-style: preserve-3d;
+        position: relative;
+        transform:  rotateX(-5deg) rotateY(-45deg);
+        div
+        {
+            transform-style: preserve-3d;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            backface-visibility: visible;
+        }
+    }
+}

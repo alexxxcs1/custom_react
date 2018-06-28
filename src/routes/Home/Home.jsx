@@ -4,6 +4,7 @@ import style from './Home.scss'
 
 import ProgressBanner from 'components/ProgressBanner'
 import HellworldBox from 'components/HellworldBox'
+import Css3dWorld from 'components/Css3dWorld';
 import HomeChildFirst from 'routes/HomeChildFirst';
 
 export class Home extends Component {
@@ -25,10 +26,10 @@ export class Home extends Component {
     return (
       <div className={style.Box}>
         <ProgressBanner loaded={this.state.pageonload} color='#333'/>
-        <HellworldBox />
-        <Switch>
+        <Css3dWorld />
+        {/* <Switch>
           <Route path='/Home/firstchild' exact component={HomeChildFirst} /> 
-        </Switch>
+        </Switch> */}
       </div>
     )
   }

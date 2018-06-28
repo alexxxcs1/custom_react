@@ -10,20 +10,20 @@ import AnimateBackground from 'components/AnimateBackground'
 class App extends Component {
   render() {
     return (
-      <div >
+      <div style={{height: '100%'}}>
         <HashRouter >
-          <div>
+          <div style={{height: '100%'}}>
               <Switch>
                   
                   {/* 首页 */}
-                  <Route path='/Home' component={Home} />
+                  <Route path='/' component={Home} />
                   {/* 404页面 */}
                   <Route component={NotFound}/> 
                     
               </Switch>
           </div>
         </HashRouter>
-        <AnimateBackground />
+        {/* <AnimateBackground /> */}
       </div>
     );
   }
