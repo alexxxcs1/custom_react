@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HashRouter,Route,Switch  } from 'react-router-dom';
+import { HashRouter,Route,Switch} from 'react-router-dom';
 // import style from  './App.scss';
 
 import Home from 'routes/Home'
@@ -13,16 +13,14 @@ class App extends Component {
       <div >
         <HashRouter >
           <div>
-            <Switch>
-              
-                {/* 首页 */}
-                <Route path='/' exact component={Home} > 
-                  {/* <Route path="/login" component={Login}/> */}
-                </Route>
-                {/* 404页面 */}
-                <Route component={NotFound}/> 
-              
-            </Switch>
+              <Switch>
+                  
+                  {/* 首页 */}
+                  <Route path='/Home' component={Home} />
+                  {/* 404页面 */}
+                  <Route component={NotFound}/> 
+                    
+              </Switch>
           </div>
         </HashRouter>
         <AnimateBackground />
