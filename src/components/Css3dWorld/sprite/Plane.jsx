@@ -6,22 +6,31 @@ export class Plane extends Component {
     super(props);
     this.state = {
         style : {
-            width:'200px',
-            height:'300px',
+            width:'100px',
+            height:'100px',
             background:'#fff',
         }
     }; 
+    this.refreshProp = this.refreshProp.bind(this);
+  }
+  componentWillReceiveProps(nextprops)
+  {
+      this.refreshProp(nextprops)
   }
   componentDidMount()
   {
-      var custom_props  =JSON.parse(JSON.stringify(this.props.style?this.props.style:''));
-      var custom_state = JSON.parse(JSON.stringify(this.state.style));
-      var style = Object.assign(custom_state,custom_props);
-      console.log(this.props.style);
-      
-      this.setState({
-        style:style
-      })
+      this.refreshProp(this.props)
+  }
+  refreshProp(prop)
+  {
+    var custom_props  =JSON.parse(JSON.stringify(prop.style?prop.style:''));
+    var custom_state = JSON.parse(JSON.stringify(this.state.style));
+    var style = Object.assign(custom_state,custom_props);
+    console.log(prop);
+    
+    this.setState({
+      style:style
+    })
   }
   render() {
     return (

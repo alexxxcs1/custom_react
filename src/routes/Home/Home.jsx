@@ -20,7 +20,15 @@ export class Home extends Component {
         pageonload:true,
       }) 
       console.log(this.props);
-      
+      this.createInput = this.createInput.bind(this);
+  }
+  createInput()
+  {
+    var a = [];
+    for (let j = 0; j <= 4000; j++) {
+      a.push((<input type="text"/>))
+    }
+    return a
   }
   render() {
     return (

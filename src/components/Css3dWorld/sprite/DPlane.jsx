@@ -6,19 +6,17 @@ export class DPlane extends Component {
   {
       super(props);
       this.state = {
-          type:'default'
+          type:'default',
       };
       this.refreshState_type = this.refreshState_type.bind(this);
       this.createPlane = this.createPlane.bind(this);
   }
   componentDidMount()
   {
-    this.refreshState_type(this.props)
+    this.refreshState_type(this.props);
   }
   refreshState_type(prop)
-  {
-    console.log(prop.type);
-      
+  { 
     this.setState({
         type:prop.type?prop.type:'default',
     });
@@ -26,15 +24,14 @@ export class DPlane extends Component {
   createPlane()
   {
       switch (this.state.type) {
-          case 'default':
-              return <Plane />
+          case 'def':
+              return <Plane/>
           case 'front':
-              return <Plane />
+              return <Plane/>
           case 'bottom':
-              return <Plane style={{transform:'translateX(-50%) translateY(-50%) rotateX(90deg)'}}/>
-
-          default:
-              return <Plane />
+              return <Plane style={{width:'100px',height:'100px',transform:'translateX(-50%) translateY(-50%) rotateX(90deg)'}}/>
+          case 'left':
+              return <Plane style={{width:'100px',height:'100px',transform:'translateX(-50%) translateY(-50%) rotateY(90deg)'}}/>
       }
   }
   render() {
